@@ -1,13 +1,17 @@
-const { Client, Events, GatewayIntentBits } = require('discord.js');
-const { token } = require('./config.json');
+const fs = require('node:fs');
+const path = require('node:path');
+const {Client, Collection, Events, GatewayIntentBits} = require('discord.js');
+const {token} = require('./config.json');
 
 // Initializing a new Client
-const client = new Client({ intents: [GatewayIntentBits.Guilds ] });
+const client = new Client({intents: [GatewayIntentBits.Guilds]});
 
 // Run this, when client is ready
-// The 'c' param is used to separete it from the 'client' variable
-client.once(Events.ClientReady, c => {
-  console.log(`Ready! Logged in as ${c.user.tag}`);
-});
+client.once(Events.ClientReady, handleClient);
+
+// Function to handle the client
+function handleClient(tag) {
+  console.log(`Ready! Logged in as ${tag.user.tag}`);
+}
 
 client.login(token);

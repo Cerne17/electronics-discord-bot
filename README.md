@@ -60,10 +60,86 @@ npm install dotenv
 It is important to keep the gitignore file up to your project needs.
 For now, the project's gitignore file should include:
 ```
-node_modules
+node_modules/
 .env
 config.json
 ```
+
+## 2. Setting the index.js file
+To setup the index.js file, you need to configure it as follows:
+```
+// Require the necessary discord.js classes
+const { Client, Events, GatewayIntentBits } = require('discord.js');
+const { token } = require('./config.json');
+
+// Create a new client instance
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
+// When the client is ready, run this code (only once)
+// We use 'c' for the event parameter to keep it separate from the already defined 'client'
+client.once(Events.ClientReady, c => {
+	console.log(`Ready! Logged in as ${c.user.tag}`);
+});
+
+// Log in to Discord with your client's token
+client.login(token);
+```
+
+## 3. Running the bot
+After setting the index file up, you will need to run the application to test it.
+You can run the application in the terminal by inserting the following line to the prompt:
+```
+node index.js
+```
+If done right, you should see
+```
+Ready! Logged in as <Bots Name>
+```
+in the prompt.
+By this point, if you check the discord server, your bot should be already online!
+
+### Note: Shutting down the bot
+To shut down the bot, you should type ```Ctrl + C``` in the terminal to stop the application's tasks.
+
+# First Commands
+After years of discord bots using the bang prefix as a pseudo-default configuration, the discord's team came up with the slash commands feature. 
+What that means is that we can build better functionalities to our bots!
+
+### Useful informations about slash commands
+<ul>
+<li>The slash commands must have from 1 up to 32 characters.</li>
+<li>They cannot contain any capital letters</li>
+<li>They cannot contain spaces or special symbols</li>
+<li>Slash commands can contain `-` and `_`</li>
+<li>They are built using `SlashCommandBuilder`</li>
+</ul>
+
+## 1. Building the commands
+
+### A simple example:
+The simplest ping command built by the SlashCommandBuilder is done as follows:
+```
+new SlashCommandBuilder()
+    .setName('ping')
+    .setDescription('Replies with Pong!')
+```
+`setName` is the commands name, it is what the user will need to type to use the command.
+`setDescription` is a short text to describe the command's usage.
+
+The basic form of the Ping Pong command is already built, but this command does nothing yet. To add a usage for this command, we need to code a function to respond to the interaction.
+
+The simplest way to create a response function is to do it using the ```interaction.reply()``` method. The following function is declared in the ```commands/ping.js``` file, to be soon explained.
+```
+async execute(interaction) {
+	await interaction.reply('Pong!')
+}
+```
+To put these together, you should create ```commands/ping.js```. The commands directory is where you should insert two properties: `data` and `execute` method.
+
+<ul>
+    <li>Data (property): provides the command's definition</li>
+    <li>Execute (method): contains the funcionalities to run from the event handler when the command is used.</li>
+</ul>
 
 # Important Observations
 <ol>
