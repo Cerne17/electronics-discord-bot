@@ -33,10 +33,10 @@ https://discord.com/api/oauth2/authorize?client_id=123456789012345678&permission
 
 ### The Links structure:
 <ul>
-    <li>```https://discord.com/api/oauth2/authorize``` simply a default part of the URL</li>
-    <li>```client_id=...``` specifies which bot you want to authorize by its client id</li>
-    <li>```permissions=...``` specifies the permissions the bot needs to run the server</li>
-    <li>```scope=bot%20applications.commands``` this shows to discord, that this user is a bot, not a human user</li>
+    <li>https://discord.com/api/oauth2/authorize simply a default part of the URL</li>
+    <li>client_id=... specifies which bot you want to authorize by its client id</li>
+    <li>permissions=... specifies the permissions the bot needs to run the server</li>
+    <li>scope=bot%20applications.commands this shows to discord, that this user is a bot, not a human user</li>
 </ul>
 
 This bot's link is:
@@ -64,3 +64,8 @@ node_modules
 .env
 config.json
 ```
+
+# Important Observations
+<ol>
+    <li>Guild: for the discord.js library, guilds is the way they refer to servers</li>
+</ol>

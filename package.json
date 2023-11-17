@@ -2,7 +2,7 @@
   "name": "discordelectronicsbot",
   "version": "1.0.0",
   "description": "This is a discord bot to manage the electronics engineering discord server from UFRJ",
-  "main": "bot.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest -coverage"
   },
