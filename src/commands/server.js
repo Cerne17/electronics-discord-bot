@@ -7,4 +7,4 @@ module.exports = {
   async execute( interaction ) {
     await interaction.reply( `This server's name is: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}` );
   }
-}
+};
