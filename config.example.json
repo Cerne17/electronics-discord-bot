@@ -1,3 +1,5 @@
 {
-  "token": "the token goes here"
+  "token": "the token goes here",
+  "clientId": "the client id goes here",
+  "guildId": "the guild id goes here"
 }

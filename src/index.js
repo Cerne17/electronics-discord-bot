@@ -13,7 +13,7 @@ const commandFolders = fs.readdirSync(folderPath); // Reads the commands folder
 
 for (const folder of commandFolders) {
   const commandPath = path.join(folderPath, folder);
-  const commandFiles = fs.readdirSync(commandPath).filter(file => file.endsWith('.js'));
+  const commandFiles = fs.readdirSync(commandPath).filter((file) => file.endsWith('.js'));
 
   for (const file of commandFiles) {
     const filePath = path.join(commandPath, file);

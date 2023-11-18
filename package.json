@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./src/index.js",
     "test": "jest -coverage",
-    "format": "npx prettier --write ./src/* ./src/**/*"
+    "format": "npx prettier --write ./src/* ./src/**/*",
+    "deploy": "node ./src/deploy-commands.js"
   },
   "author": "Miguel Cerne",
   "license": "ISC",
