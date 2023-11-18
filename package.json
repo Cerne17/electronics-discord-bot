@@ -4,7 +4,9 @@
   "description": "This is a discord bot to manage the electronics engineering discord server from UFRJ",
   "main": "index.js",
   "scripts": {
-    "test": "jest -coverage"
+    "start": "node ./src/index.js",
+    "test": "jest -coverage",
+    "format": "npx prettier --write ./src/* ./src/**/*"
   },
   "author": "Miguel Cerne",
   "license": "ISC",
@@ -13,6 +15,7 @@
     "dotenv": "^16.3.1"
   },
   "devDependencies": {
-    "eslint": "^8.53.0"
+    "eslint": "^8.53.0",
+    "prettier": "^3.1.0"
   }
 }
