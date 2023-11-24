@@ -1,6 +1,6 @@
 /*
  * This file is intended to register and update the slash commands for the bot
- * To deploy the commands, run: node ./src/deploy-commands.js
+ * To deploy the commands, run: (node run deploy) node ./src/deploy-commands.js
  */
 
 const { REST, Routes } = require('discord.js');
